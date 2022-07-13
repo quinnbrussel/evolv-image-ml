@@ -1,8 +1,9 @@
 # import libraries and image
+from sys import argv
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
-path = 'images/london.JPG' # change to 'ofl.png' to segment the ofl screenshot
+path = argv[1]
 img = cv2.imread(path)
 
 # preprocess the image
@@ -12,7 +13,7 @@ twoDimage = np.float32(twoDimage)
 
 # defining some parameters
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
-K = 5 # 'K' is the number of segments
+K = int(argv[2])
 attempts=10
 
 # apply k-means segmentation
