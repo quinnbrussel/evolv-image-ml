@@ -6,3 +6,5 @@ See /images for my bank of images.
 See opencv_kmeans.py for OpenCV's kmeans algorithm.
 
 See opencv_cont.py for OpenCV's contour detection algorithm.
+
+See opencv_thresh.py for OpenCV's Thresholding algorithm.
