@@ -17,6 +17,7 @@ pip install matplotlib
 
 ## Usage
 Training, testing, and validation data must be provided in a data directory with the following files and directories:
+
 data
 - test
 - testannot
@@ -24,25 +25,47 @@ data
 - trainannot
 - val 
 - valannot
-- classes.csv
 
 These directories should contain png files of an image and a corresponding annotated mask.
 For example, in train we might have
+
 ![abbey_road](abbey_road_example/img.png)
+
 and in trainannot, we would have
+
 ![mask](abbey_road_example/label.png)
 
 The index of each image in a directory must coorespond with that of its mask.
 
-In classes.csv, there should be a list of each class and it's corresponding pixel value in the mask, labeled 'class,value'
+Additionally, one must edit the classes.csv file in the github clone so that here is a list of each class and it's corresponding pixel value in the mask, labeled 'class,value'
+
 For example:
+
 class,value
+
 human,[1,1,1]
+
 car,[2,2,2]
+
 tree,[3,3,3]
+
 
 Once the 'data' directory exists, run the following command to preprocess the images:
 ```zsh
 python3 ./preprocess.py *data-path*
 ```
 where data-path is the path to the data directory.
+
+To train a model, enter:
+```zsh 
+python3 ./unet_training.py
+```
+This will output the file best_model.h5, which is the file for the model.
+
+Finally, to run this model to segment a new image, enter:
+```zsh
+python3 ./run.py best_model.h5 *imagename*
+```
+where imagename is the name of the image that is to be segmented.
+
+This will output a mask of the image.
