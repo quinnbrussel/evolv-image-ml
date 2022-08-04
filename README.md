@@ -37,24 +37,26 @@ and in trainannot, we would have
 
 The index of each image in a directory must coorespond with that of its mask.
 
-Additionally, one must edit the classes.csv file in the github clone so that here is a list of each class and it's corresponding pixel value in the mask, labeled 'class,value'
+Next, the user must open preprocess.py and edit the 'classes' dictionary in line 7 so that each bin of the dictionary is a segmentation class, and each bin contains the pixel value of the class within the mask.
 
 For example:
 
-class,value
+```python
+classes = {'human':[1,1,1], 'car':[2,2,2], 'tree':[3,3,3]}
+```
 
-human,[1,1,1]
+Additionally, the user must set 'DATA_DIR' in line 6 of preprocess.py to the path of the data directory.
 
-car,[2,2,2]
+For example:
 
-tree,[3,3,3]
-
+```python
+DATA_DIR = 'data'
+```
 
 Once the 'data' directory exists, run the following command to preprocess the images:
 ```zsh
-python3 ./preprocess.py *data-path*
+python3 ./preprocess.py
 ```
-where data-path is the path to the data directory.
 
 To train a model, enter:
 ```zsh 
