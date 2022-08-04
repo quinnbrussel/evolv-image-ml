@@ -2,15 +2,15 @@
 A collection of programs to create and run an image segmentation model using open source code. Developed for Evlov AI.
 
 ## Requirements
-[segmentation_models](https://github.com/qubvel/segmentation_models) by [qubvel](https://github.com/qubvel)  
-keras by [tensorflow](https://www.tensorflow.org/install)  
-[OpenCV](https://opencv.org/releases/)  
-[Albumentations](https://albumentations.ai/docs/getting_started/installation/)  
-Numpy:
+- [segmentation_models](https://github.com/qubvel/segmentation_models) by [qubvel](https://github.com/qubvel)  
+- [tensorflow](https://www.tensorflow.org/install)  
+- [OpenCV](https://opencv.org/releases/)  
+- [Albumentations](https://albumentations.ai/docs/getting_started/installation/)  
+- Numpy:
 ```zsh
 pip install numpy
 ```
-Matplotlib
+- Matplotlib
 ```zsh
 pip install matplotlib
 ```
