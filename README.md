@@ -6,7 +6,7 @@ A collection of programs to create and run an image segmentation model using ope
 - [tensorflow](https://www.tensorflow.org/install)  
 - [OpenCV](https://opencv.org/releases/)  
 - [Albumentations](https://albumentations.ai/docs/getting_started/installation/)  
-- Numpy:
+- Numpy
 ```zsh
 pip install numpy
 ```
@@ -37,20 +37,29 @@ and in trainannot, we would have
 
 The index of each image in a directory must coorespond with that of its mask.
 
-Next, the user must open preprocess.py and edit the 'classes' dictionary in line 7 so that each bin of the dictionary is a segmentation class, and each bin contains the pixel value of the class within the mask.
-
-For example:
-
-```python
-classes = {'human':[1,1,1], 'car':[2,2,2], 'tree':[3,3,3]}
-```
-
-Additionally, the user must set 'DATA_DIR' in line 6 of preprocess.py to the path of the data directory.
+Next, the user must set 'DATA_DIR' in line 1 of header.py to the path of the data directory.
 
 For example:
 
 ```python
 DATA_DIR = 'data'
+```
+
+Then, the user must edit the 'classes' dictionary in line 2 of header.py so that each bin of the dictionary is a segmentation class, and each bin contains the pixel value of the class within the mask.
+
+For example:
+
+```python
+CLASSES = {'_background_': [0, 0, 0], 'cta': [0, 0, 128]}
+```
+
+The user must now edit 'BATCH_SIZE' in line 3 so that the value reflects the number of images processed per batch. Next edit 'PREDICT_CLASS' so that it is a list containing the classes we want the model to identify. Finally, edit 'EPOCHS' so that it reflects the number of EPOCHS to run during training.
+
+For example:
+```python
+BATCH_SIZE = 8
+PREDICT_CLASS = ['cta']
+EPOCHS = 40
 ```
 
 Once the 'data' directory exists, run the following command to preprocess the images:

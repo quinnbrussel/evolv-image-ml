@@ -1,10 +1,8 @@
 from cv2 import imread, imwrite
 import os 
 import numpy as np
+from header import DATA_DIR, CLASSES
 
-
-DATA_DIR = 'data'
-CLASSES = {'_background_': [0, 0, 0], 'cta': [0, 0, 128]}
 values = [value for value in CLASSES.values()]
 
 train_dir = os.path.join(DATA_DIR, 'trainannot')
