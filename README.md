@@ -71,12 +71,12 @@ To train a model, enter:
 ```zsh 
 python3 ./unet_training.py
 ```
-This will output the file best_model.h5, which is the file for the model.
+This will output a directory, final-model, in the current directory and contains the final model.
 
-Finally, to run this model to segment a new image, enter:
+Finally, to run this model to segment on a new image, create a directory containing the image to evaluate and run:
 ```zsh
-python3 ./run.py best_model.h5 *imagename*
+python3 ./run.py *dirname*
 ```
-where imagename is the name of the image that is to be segmented.
+where dirname is the name of the directory containing the image.
 
-This will output a mask of the image.
+This will display a mask of the image.

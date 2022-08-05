@@ -330,3 +330,5 @@ for i in ids:
         gt_mask=gt_mask[..., 0].squeeze(),
         pr_mask=pr_mask[..., 0].squeeze(),
     )
+
+model.save('final-model')
