@@ -37,7 +37,7 @@ and in trainannot, we would have
 
 The index of each image in a directory must coorespond with that of its mask.
 
-For annotation, [Labelme](https://github.com/wkentaro/labelme), a free annotation software, is a recommended software.
+For annotation, [Labelme](https://github.com/wkentaro/labelme), a free annotation software, is recommended.
 
 Next, the user must set 'DATA_DIR' in line 1 of header.py to the path of the data directory.
 
